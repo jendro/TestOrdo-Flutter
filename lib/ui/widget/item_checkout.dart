@@ -49,6 +49,9 @@ class ItemCheckout extends StatelessWidget {
                       CircleAvatar(
                         backgroundColor: Colors.grey[100],
                         radius: dp.size(90),
+                        backgroundImage: AssetImage(
+                          'assets/images/product_1.png',
+                        ),
                       ),
                       dp.sw(30),
                       Column(

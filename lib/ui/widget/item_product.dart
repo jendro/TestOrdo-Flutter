@@ -121,7 +121,7 @@ class ItemProduct extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        'diskon ${product.discount ?? 0})%',
+                        'diskon ${product.discount ?? 0}%',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w700,

@@ -193,6 +193,9 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                           children: [
                             CircleAvatar(
                               backgroundColor: Colors.red,
+                              backgroundImage: AssetImage(
+                                'assets/images/profile_1.png',
+                              ),
                             ),
                             dp.sw(30),
                             Text(

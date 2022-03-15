@@ -39,7 +39,11 @@ class BottomNavigationCustom {
       selectedItemColor: ColorsApp.green,
       backgroundColor: Colors.white,
       iconSize: dp.size(45),
-      onTap: (int id) => {},
+      onTap: (int index) {
+        if (index == 2) {
+          Navigator.of(context).popUntil((route) => route.isFirst);
+        }
+      },
     );
   }
 }

@@ -33,6 +33,9 @@ class ItemReview extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundColor: Colors.red,
+                    backgroundImage: AssetImage(
+                      'assets/images/profile_2.png',
+                    ),
                   ),
                   dp.sw(30),
                   Column(
