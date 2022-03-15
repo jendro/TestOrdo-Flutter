@@ -31,19 +31,55 @@ class ItemProduct extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: dp.size(295),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+              Stack(
+                children: [
+                  Container(
+                    height: dp.size(295),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+                        ),
+                      ),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(dp.size(18)),
+                      ),
                     ),
                   ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(dp.size(18)),
+                  Positioned(
+                    child: Container(
+                      padding: EdgeInsets.all(dp.size(5)),
+                      width: dp.size(200),
+                      decoration: BoxDecoration(
+                        color: ColorsApp.yellow,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(dp.size(15)),
+                          topRight: Radius.circular(dp.size(15)),
+                          bottomRight: Radius.circular(dp.size(15)),
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.white,
+                            size: dp.size(20),
+                          ),
+                          dp.sw(5),
+                          Text(
+                            '5.0 | 200 + Rating',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              fontSize: dp.size(17),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
               dp.sh(10),
               Row(
