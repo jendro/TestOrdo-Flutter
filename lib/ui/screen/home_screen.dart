@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
+import 'package:test_ordo/ui/widget/bottom_navigation_custom.dart';
 import 'package:test_ordo/ui/widget/image_slider.dart';
 import 'package:test_ordo/ui/widget/item_product.dart';
 
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: ColorsApp.background,
       appBar: AppBarHome().build(context),
+      bottomNavigationBar: BottomNavigationCustom(context: context).build(),
       body: SafeArea(
         child: ListView(
           children: [

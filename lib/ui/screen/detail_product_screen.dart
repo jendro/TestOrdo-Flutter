@@ -4,6 +4,7 @@ import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/layouts/app_bar_main.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
+import 'package:test_ordo/ui/widget/bottom_navigation_custom.dart';
 import 'package:test_ordo/ui/widget/image_slider.dart';
 import 'package:test_ordo/ui/widget/item_product.dart';
 import 'package:test_ordo/ui/widget/item_review.dart';
@@ -28,6 +29,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
       appBar: AppBarMain(
         title: 'PRODUK DETAIL',
       ).build(context),
+      bottomNavigationBar: BottomNavigationCustom(context: context).build(),
       body: SafeArea(
         child: ListView(
           children: [
