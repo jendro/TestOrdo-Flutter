@@ -25,7 +25,9 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
     dp = DP(context);
     return Scaffold(
       backgroundColor: ColorsApp.background,
-      appBar: AppBarMain().build(context),
+      appBar: AppBarMain(
+        title: 'PRODUK DETAIL',
+      ).build(context),
       body: SafeArea(
         child: ListView(
           children: [

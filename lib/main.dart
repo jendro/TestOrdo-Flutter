@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_ordo/ui/screen/checkout_screen.dart';
 import 'package:test_ordo/ui/screen/detail_product_screen.dart';
 import 'package:test_ordo/ui/screen/home_screen.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         routes: {
           HomeScreen.id: (_) => HomeScreen(),
           DetailProductScreen.id: (_) => DetailProductScreen(),
+          CheckoutScreen.id: (_) => CheckoutScreen(),
         },
       ),
     );
