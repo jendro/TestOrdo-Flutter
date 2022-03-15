@@ -2,9 +2,11 @@ import 'package:test_ordo/model/review.dart';
 import 'package:test_ordo/model/vendor.dart';
 
 class Product {
+  final Vendor vendor;
   final String thumbnail;
   final String name;
-  final Vendor vendor;
+  final int price;
+  final List<String>? images;
   final String? description;
   final int? stock;
   final int? sales;
@@ -15,9 +17,11 @@ class Product {
   final List<Review>? review;
 
   Product({
+    required this.vendor,
     required this.thumbnail,
     required this.name,
-    required this.vendor,
+    required this.price,
+    this.images,
     this.description,
     this.stock,
     this.sales,

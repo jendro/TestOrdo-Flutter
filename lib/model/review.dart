@@ -1,5 +1,4 @@
 import 'package:test_ordo/model/user.dart';
-import 'package:test_ordo/model/vendor.dart';
 
 class Review {
   final User user;

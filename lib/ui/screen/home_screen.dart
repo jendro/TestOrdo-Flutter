@@ -4,6 +4,7 @@ import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
 import 'package:test_ordo/ui/widget/image_slider.dart';
+import 'package:test_ordo/ui/widget/item_product.dart';
 import 'package:test_ordo/ui/widget/search_bar_input.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,6 +37,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
               ],
             ),
+            dp.sh(56),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: dp.size(65)),
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: dp.size(56),
+                mainAxisSpacing: dp.size(56),
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                childAspectRatio: 0.7,
+                children: [
+                  ItemProduct(),
+                  ItemProduct(),
+                  ItemProduct(),
+                  ItemProduct(),
+                  ItemProduct(),
+                  ItemProduct(),
+                ],
+              ),
+            )
           ],
         ),
       ),
