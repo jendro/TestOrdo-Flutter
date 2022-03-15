@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:test_ordo/model/product.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
 import 'package:test_ordo/ui/screen/detail_product_screen.dart';
 
 class ItemProduct extends StatelessWidget {
-  const ItemProduct({Key? key}) : super(key: key);
+  final Product product;
+  const ItemProduct({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   void _gotoDetailProduct(context) {
     Navigator.pushNamed(context, DetailProductScreen.id);
@@ -38,9 +43,7 @@ class ItemProduct extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(
-                          'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-                        ),
+                        image: AssetImage(product.thumbnail),
                       ),
                       borderRadius: BorderRadius.all(
                         Radius.circular(dp.size(18)),
@@ -68,7 +71,7 @@ class ItemProduct extends StatelessWidget {
                           ),
                           dp.sw(5),
                           Text(
-                            '5.0 | 200 + Rating',
+                            '${product.ratting} | 200 + Rating',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w700,
@@ -89,7 +92,7 @@ class ItemProduct extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        'Rp. 15000',
+                        'Rp. ${product.price}',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: dp.size(25),
@@ -99,7 +102,7 @@ class ItemProduct extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Rp. 10000',
+                        'Rp. ${product.price - (product.discount! * product.price / 100)}',
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: dp.size(25),
@@ -108,28 +111,29 @@ class ItemProduct extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.all(dp.size(11)),
-                    decoration: BoxDecoration(
-                      color: ColorsApp.blue1,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(18),
+                  if (product.discount != null)
+                    Container(
+                      padding: EdgeInsets.all(dp.size(11)),
+                      decoration: BoxDecoration(
+                        color: ColorsApp.blue1,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(18),
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      'diskon 10%',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: dp.size(15),
+                      child: Text(
+                        'diskon ${product.discount ?? 0})%',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: dp.size(15),
+                        ),
                       ),
-                    ),
-                  )
+                    )
                 ],
               ),
               dp.sh(10),
               Text(
-                'Nama Barang Lumayan Panjang',
+                product.name,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: dp.size(27),

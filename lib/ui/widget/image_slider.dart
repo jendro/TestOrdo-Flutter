@@ -84,7 +84,7 @@ class _ImageSliderState extends State<ImageSlider> {
                 borderRadius: BorderRadius.all(
                   Radius.circular(dp.size(20)),
                 ),
-                child: Image.network(
+                child: Image.asset(
                   item,
                   fit: BoxFit.cover,
                   width: dp.full(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_ordo/model/product.dart';
+import 'package:test_ordo/model/vendor.dart';
 import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
@@ -18,6 +20,42 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late DP dp;
 
+  List<Product> products = [
+    Product(
+      vendor: Vendor(thumbnail: 'assets/images/profile_1', name: 'Eiger'),
+      thumbnail: 'assets/images/product_1.png',
+      name: 'Handphone',
+      price: 10000,
+      discount: 25,
+      ratting: 4.5,
+      sales: 5,
+    ),
+    Product(
+      vendor: Vendor(thumbnail: 'assets/images/profile_2', name: 'Penjual'),
+      thumbnail: 'assets/images/product_2.png',
+      name: 'Speaker',
+      price: 15000,
+      discount: 10,
+      ratting: 3.9,
+    ),
+    Product(
+      vendor: Vendor(thumbnail: 'assets/images/profile_3', name: 'Pedagang'),
+      thumbnail: 'assets/images/product_3.png',
+      name: 'Speaker',
+      price: 25000,
+      discount: 45,
+      ratting: 5,
+    ),
+    Product(
+      vendor: Vendor(thumbnail: 'assets/images/profile_3', name: 'Pedagang'),
+      thumbnail: 'assets/images/product_4.png',
+      name: 'Speaker',
+      price: 25000,
+      discount: 45,
+      ratting: 5,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     dp = DP(context);
@@ -32,9 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
             ImageSlider(
               height: 404,
               imgList: [
-                'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-                'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-                'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+                'assets/images/slider.png',
+                'assets/images/slider.png',
+                'assets/images/slider.png',
               ],
             ),
             dp.sh(56),
@@ -48,12 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 shrinkWrap: true,
                 childAspectRatio: 0.7,
                 children: [
-                  ItemProduct(),
-                  ItemProduct(),
-                  ItemProduct(),
-                  ItemProduct(),
-                  ItemProduct(),
-                  ItemProduct(),
+                  ItemProduct(product: products[0]),
+                  ItemProduct(product: products[1]),
+                  ItemProduct(product: products[2]),
+                  ItemProduct(product: products[1]),
+                  ItemProduct(product: products[3]),
                 ],
               ),
             ),
