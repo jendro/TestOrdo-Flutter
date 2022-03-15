@@ -7,7 +7,8 @@ import 'package:test_ordo/ui/widget/search_bar_input.dart';
 class AppBarHome {
   const AppBarHome();
 
-  PreferredSize build(DP dp) {
+  PreferredSize build(BuildContext context) {
+    DP dp = DP(context);
     return PreferredSize(
       preferredSize: Size(0, 129),
       child: Container(

@@ -1,11 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/misc/colors_app.dart';
 import 'package:test_ordo/ui/misc/dp.dart';
 import 'package:test_ordo/ui/widget/image_slider.dart';
 import 'package:test_ordo/ui/widget/item_product.dart';
-import 'package:test_ordo/ui/widget/search_bar_input.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -24,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     dp = DP(context);
     return Scaffold(
       backgroundColor: ColorsApp.background,
-      appBar: AppBarHome().build(dp),
+      appBar: AppBarHome().build(context),
       body: SafeArea(
         child: ListView(
           children: [
@@ -56,7 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ItemProduct(),
                 ],
               ),
-            )
+            ),
+            dp.sh(30),
           ],
         ),
       ),
