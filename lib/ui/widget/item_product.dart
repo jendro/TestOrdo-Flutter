@@ -12,7 +12,14 @@ class ItemProduct extends StatelessWidget {
   }) : super(key: key);
 
   void _gotoDetailProduct(context) {
-    Navigator.pushNamed(context, DetailProductScreen.id);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => DetailProductScreen(
+          product: product,
+        ),
+      ),
+    );
   }
 
   @override
@@ -102,7 +109,7 @@ class ItemProduct extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Rp. ${product.price - (product.discount! * product.price / 100)}',
+                        'Rp. ${(product.price - (product.discount! * product.price / 100)).toInt()}',
                         style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: dp.size(25),

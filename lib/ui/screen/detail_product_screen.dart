@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_ordo/model/product.dart';
 import 'package:test_ordo/model/review.dart';
 import 'package:test_ordo/ui/layouts/app_bar_home.dart';
 import 'package:test_ordo/ui/layouts/app_bar_main.dart';
@@ -10,7 +11,11 @@ import 'package:test_ordo/ui/widget/item_product.dart';
 import 'package:test_ordo/ui/widget/item_review.dart';
 
 class DetailProductScreen extends StatefulWidget {
-  DetailProductScreen({Key? key}) : super(key: key);
+  Product? product;
+  DetailProductScreen({
+    Key? key,
+    this.product,
+  }) : super(key: key);
 
   static const String id = 'detail_product_screen';
 
@@ -75,7 +80,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Tas Gucci',
+                              widget.product!.name,
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: ColorsApp.green,
@@ -84,7 +89,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                             ),
                             dp.sh(11),
                             Text(
-                              'Rp. 126.000',
+                              'Rp. ${widget.product?.price}',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: ColorsApp.blue2,
@@ -94,7 +99,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                               ),
                             ),
                             Text(
-                              'Rp. 100.500',
+                              'Rp. ${(widget.product!.price - (widget.product!.price * widget.product!.discount! / 100)).toInt()}',
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 color: ColorsApp.blue1,
